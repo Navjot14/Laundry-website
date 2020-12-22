@@ -1,0 +1,146 @@
+<!Doctype html>
+ 
+  <html>
+     
+      <head>
+      	  <title>PROJECT</title>
+      </head>
+
+      <style>
+            body{
+                 background-image:url("ipo.jpg");  
+                 background-attachment: fixed;
+                 background-size: cover;
+                }
+            .topleft1{
+            	position:absolute;
+            	top:180px;
+            	left:530px;
+            	color:yellow;
+            }
+            .cpl{
+            	position:absolute;
+            	top:334px;
+            	left:480px;
+            	font-size:30px; 
+            }
+            .cpll{
+              position:absolute;
+              padding: 9em 500px ;
+              color:red;
+              font-size:30px; 
+            }
+            .cuo{
+              position:absolute;
+              top:545px;
+              left:480px;
+              font-size:30px; 
+            }
+            .cuol{
+              position:absolute;
+              padding: 16em 500px;
+              color:red;
+              font-size:30px; 
+            }
+            .cso{
+              position:absolute;
+              top:442px;
+              left:760px;
+              font-size:30px; 
+            }
+            .csol{
+              position:absolute;
+              padding: 12em 780px;
+              color:red;
+              font-size:30px; 
+            }
+            .cda{
+              position:absolute;
+              top:340px;
+              left:1010px; 
+            }
+            .cdal{
+              position:absolute;
+              padding: 9em 1032px;
+              color:red;
+              font-size:30px; 
+            }
+            .cdo{
+              position:absolute;
+              top:550px;
+              left:1010px;
+            }
+            .cdol{
+              position:absolute;
+              padding: 16em 1032px;
+              color:red;
+              font-size:30px; 
+            }
+          .back{
+                color:gold;
+                position:relative;
+                top:10px;
+                left:1400px; 
+            }
+            .sub{
+                position:absolute;
+                top:650px;
+                left:950px; 
+            }
+            .del{
+                position:absolute;
+                top:650px;
+                left:600px; 
+            }
+      </style>
+      
+      <body>
+           <a href="project.php" class="back">Logout</button></a>
+      	  <h1 class="topleft1"><u><i><b>Welcome to the laundry department!!</b></i></u></h1>
+          <p class="cpll">Place Order</p>
+          <p class="cuol">Update Order</p>
+          <p class="csol">Search Order</p>
+          <p class="cdal">Delete Order</p>
+          <p class="cdol">Display Order</p>
+          <form>
+           
+           <input type="radio" id="pl" name="rbutn" value="pl" class="cpl">
+           
+           <input type="radio" id="uo" name="rbutn" value="uo" class="cuo">
+           
+           <input type="radio" id="so" name="rbutn" value="so" class="cso">
+           
+           <input type="radio" id="da" name="rbutn" value="da" class="cda">
+           
+           <input type="radio" id="do" name="rbutn" value="do" class="cdo">
+           
+           <input type="submit" value="Submit" class="sub" onclick="displayRadioValue()">
+      	  
+          </form> 
+          <a href="deleteac.php" class="del"><button>DELETE ACCOUNT</button></a>
+          <script> 
+        function displayRadioValue() { 
+          var button1 = document.getElementById("pl");
+          var button2 = document.getElementById("uo");
+          var button3 = document.getElementById("so");
+          var button4 = document.getElementById("da");
+          var button5 = document.getElementById("do"); 
+              if(button1.checked)
+              {window.alert("Are you sure you want to select Place Order");window.open("plor.html");return true;}
+              else if (button2.checked)
+              {window.alert("Are you sure you want to select Update Order");window.open("uo.php");return true;}
+              else if (button3.checked) 
+              {window.alert("Are you sure you want to select Search Order");window.open("so.php");return true;}
+              else if (button4.checked)
+              {window.alert("Are you sure you want to select Delete Account");window.open("do.php");return true;}
+              else if (button5.checked)
+              {window.alert("Are you sure you want to select Display Order");window.open("disp.php");return true;}
+              return false;
+        } 
+          </script> 
+      </body>	
+
+
+
+
+  </html>    

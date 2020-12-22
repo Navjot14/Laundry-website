@@ -1,0 +1,197 @@
+<!Doctype html>
+ 
+  <html>
+     
+      <head>
+          <title>PROJECT</title>
+      </head>
+
+      <style>
+            body{
+              background-image:url("plor.jpg");  
+              background-attachment: fixed;
+              background-size: cover;
+            }
+            .topleft1{
+              position:absolute;
+              top:40px;
+              left:650px;
+              color:red;
+            }
+            .topleft{
+              position:relative;
+              top:170px;
+              left:500px;
+              color:orangered;
+              font-size:30px; 
+            }
+            .topleft2{
+              position:relative;
+              top:170px;
+              left:675px;
+            }
+            .topleft3{
+              position:relative;
+              top:170px;
+              left:700px;
+            }
+            .gar{
+              position:absolute;
+              top:300px;
+              left:837px; 
+            }
+            .garl{
+              position:absolute;
+              top:292px;
+              left:490px;
+              color:orangered;
+              font-size:30px; 
+            }
+            .cl{
+              position:absolute;
+              top:360px;
+              left:837px;
+              font-size:22px; 
+            }
+            .cll{
+              position:absolute;
+              top:352px;
+              left:520px;
+              color:orangered;
+              font-size:30px; 
+            }
+            .wl{
+              position:absolute;
+              top:427px;
+              left:837px;
+              font-size:22px; 
+            }
+            .wll{
+              position:absolute;
+              top:412px;
+              left:520px;
+              color:orangered;
+              font-size:30px; 
+            }
+            .login{
+              position:absolute;
+              top:570px;
+              left:590px;
+            }
+            .Signup{
+                position:relative;
+              top:430px;
+              left:780px; 
+            }
+            .clb{
+                position:absolute;
+              top:570px;
+              left:840px; 
+            }
+      </style>
+      
+      <body>
+          <h1 class="topleft1"><u>PLACE ORDER</u></h1>
+          <form name="myForm" action="plor.php" onsubmit="return myFunction()" method="post">
+              <label for="gname" class="topleft">Guest Name</label>
+              <input type="text" id="gname" name="gname" class="topleft2" required><br><br>
+              
+              <label for="room" class="topleft">Room No.</label>
+              <input type="text" id="room" name="room" class="topleft3" required><br>
+              
+              <label for="garm" class="garl">No. of Garments</label>
+              <input type="text" id="garm" name="garm" class="gar" required><br>
+              
+              <label for="cloth" class="cll">Cloth Type</label>
+              <select id="cloth" name="cloth" class="cl">
+              <option value="none">None</option>
+              <option value="shirts">Shirts/T-Shirts</option>
+              <option value="pants">Pants/Jeans</option>
+              <option value="suits">Suits</option>
+              <option value="sarees">Sarees</option>
+              </select>
+
+              <label for="wash" class="wll">Wash Type</label>
+              <select id="wash" name="wash" class="wl">
+              <option value="none">None</option>
+              <option value="bleach">Bleach</option>
+              <option value="dyes">Dyes</option>
+              <option value="hot">Hot Wash</option>
+              <option value="dry">Dry Clean</option>
+              </select>
+              <input type="submit" value="Confirm Order" class="login">
+          </form>
+          <a href="laundry.html"><button class="clb">BACK</button></a>
+          <script> 
+            function myFunction() { 
+        
+          var gar = document.getElementById("garm").value;
+          var cl = document.getElementById("cloth").selectedIndex;
+          var ws = document.getElementById("wash").selectedIndex;
+          var ct = document.getElementById("cloth").options;
+          var wt = document.getElementById("wash").options;
+          if(cl==0)
+          {
+            alert("You have not selected cloth type");
+            return false;
+          }
+          if(ws==0)
+          {
+            alert("You have not selected wash type");
+            return false;
+          }
+          var sum=0;
+          var wc=0;
+          var cc=0;
+          var pc;
+          var pw;
+          if(cl==1 && ws==1)
+            {sum+=200;cc=200;pc="Shirts";pw="Bleach";}
+          else if(cl==2 && ws==1)
+            {sum+=250;cc=250;pc="Pants";pw="Bleach";}
+          else if(cl==3 && ws==1)
+            {sum+=300;cc=300;pc="Suits";pw="Bleach";}
+          else if(cl==4 && ws==1)
+            {sum+=350;cc=350;pc="Sarees";pw="Bleach";}
+        
+         if(cl==1 && ws==2)
+            {sum+=210;cc=210;pc="Shirts";pw="Dyes";}
+          else if(cl==2 && ws==2)
+            {sum+=260;cc=260;pc="Pants";pw="Dyes";}
+          else if(cl==3 && ws==2)
+            {sum+=310;cc=310;pc="Suits";pw="Dyes";}
+          else if(cl==4 && ws==2)
+            {sum+=360;cc=360;pc="Sarees";pw="Dyes";}
+
+         if(cl==1 && ws==3)
+            {sum+=220;cc=220;pc="Shirts";pw="Hot wash";}
+          else if(cl==2 && ws==3)
+            {sum+=270;cc=270;pc="Pants";pw="Hot wash";}
+          else if(cl==3 && ws==3)
+            {sum+=320;cc=320;pc="Suits";pw="Hot wash";}
+          else if(cl==4 && ws==3)
+            {sum+=370;cc=370;pc="Sarees";pw="Hot wash";}            
+
+          if(cl==1 && ws==4)
+            {sum+=230;cc=230;pc="Shirts";pw="Dry clean";}
+          else if(cl==2 && ws==4)
+            {sum+=280;cc=280;pc="Pants";pw="Dry clean";}
+          else if(cl==3 && ws==4)
+            {sum+=330;cc=330;pc="Suits";pw="Dry clean";}
+          else if(cl==4 && ws==4)
+            {sum+=380;cc=380;pc="Sarees";pw="Dry clean";}
+          
+          sum*=gar;
+          window.alert("YOU SELECTED CLOTH TYPE "+pc+" and  WASH TYPE "+pw+" = "+cc+" No. of garments = "+gar);
+          window.alert("TOTAL CHARGES = "+sum);
+          return true;
+        } 
+        </script> 
+        <script> 
+            if (isset($_POST['submit'])) { 
+                echo "GeeksforGeeks"; 
+            } 
+        </script> 
+      </body>   
+
+  </html>    

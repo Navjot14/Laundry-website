@@ -1,0 +1,61 @@
+<!Doctype html>
+ 
+  <html>
+     
+      <head>
+      	  <title>PROJECT</title>
+      </head>
+
+      <style>
+            body{
+            	background-image:url("deleteac.jpg");  
+              background-attachment: fixed;
+              background-size: cover;  
+            }
+            .topleft1{
+            	position:absolute;
+            	top:180px;
+            	left:580px;
+            	color:chartreuse;
+            }
+            .topleft{
+            	position:relative;
+            	top:330px;
+            	left:570px;
+            	color:yellow;
+            	font-size:30px; 
+            }
+            .topleft2{
+            	position:relative;
+            	top:330px;
+            	left:670px;
+            }
+            .topleft3{
+            	position:relative;
+            	top:330px;
+            	left:678px;
+            }
+            .login{
+            	position:relative;
+            	top:450px;
+            	left:720px;
+            }
+      </style>
+      
+      <body>
+      	  <h1 class="topleft1"><u>DELETE THE ACCOUNT</u></h1>
+      	  <form action = "delac.php" method = "POST">
+              <label for="name" class="topleft">Username:</label>
+              <input type="text" id="name" name="name" class="topleft2" required><br><br>
+              <label for="pass" class="topleft">Password:</label>
+              <input type="Password" id="pass" name="pass" class="topleft3" required><br>
+              <input type="submit" value="Delete" class="login">
+      	  </form>
+          <script> 
+            if (isset($_POST['submit'])) { 
+                echo "GeeksforGeeks"; 
+            } 
+        </script> 
+      </body>	  
+
+  </html>    
